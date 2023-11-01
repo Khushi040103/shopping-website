@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sign Up</title>
+		<link rel="stylesheet" type="text/css" href="header.css">
+		<script type="text/javascript" src="sign.js"></script>
+
+		<style type="text/css">
+
+			body{
+				position: relative;
+				background-image: linear-gradient(0deg,#d5f479 10%,#fff);
+			}
+
+			ul{
+				padding-left: 1000px;
+			}
+
+			.sign{
+				background-color: rgb(253, 215, 90);
+				margin:100px auto;
+				border: 2px black solid;
+				border-radius: 5px;
+				padding: 30px 30px;
+				width: 40%;
+				border-style: ridge;
+			}
+			center{
+				margin: 20px;
+				
+			}
+
+			center a{
+				margin-top: 50px;
+				background-color: #0c0c0c;
+				border-radius: 5px;
+				border-style: ridge;
+			}
+
+			ul{
+				padding-left:1000px; 
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<div class="nav">
+					<div class="left" align="left">Shop</div>
+					<div class="right" align="right">
+						<ul>
+							<a href="login.html"><li>LogIn</li></a>
+							<a href="Practical9.html"><li>Logout</li></a>
+						</ul>
+					</div>
+			</div>
+		</header>
+		<div class="sign">
+			<form action="product.html" onsubmit="return validate()">
+				<table align="center">
+					<tbody>
+							<tr>
+						<div>
+							<p>Username</p>
+							<input type="text" class="input-box" id="username" placeholder="Enter Username"><br><br>
+						</div>
+					</tr>
+					<tr>
+						<div>
+							<p>Mobile No.</p>
+							<input type="text" class="input-box" id="mobile"><br><br>
+						</div>
+					</tr>
+					<tr>
+						<div>
+							<p>E-mail</p>
+							<input type="text" class="input-box" id="email"><br><br>
+						</div>
+					</tr>
+					<tr>
+						<div>
+							<p>Password</p>
+							<input type="Password" class="input-box" id="password"><br>
+						</div>
+					</tr>
+					<tr>
+						<div>
+							<p>Re-Password</p>
+							<input type="Password" class="input-box" id="cpassword"><br>
+						</div>
+					</tr>
+					<tr>
+						<div>
+							<p>Delivery Address</p>
+							<input type="text" class="input-box" id="address" required><br>
+						</div>
+					</tr>
+					<tr>
+						<div>
+							<p>City</p>
+							<input type="text" class="input-box" id="city" required><br>
+						</div>
+					</tr>
+					<tr>
+						<div>
+							<p>Pincode</p>
+							<input type="text" class="input-box" id="pincode" required><br>
+						</div>
+					</tr>
+					</tbody>
+				</table>
+				<center><input type="submit" class="button" value="Create Account"></center>
+			</form>
+				
+			<div>
+				<center>Already have an account?</center>
+				<center><a href="login.html">Login</a></center>
+						
+			</div>
+		</div>
+	</body>
+</html>

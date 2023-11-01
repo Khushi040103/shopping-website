@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Product</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="header.css">
+		<style type="text/css">
+			body{
+				min-height: 100vh;
+				background-image: linear-gradient(to bottom, #fe9651, #e2b34b, #c0ca61, #9cdd8a, #79ebbb, #89f0c8, #99f5d4, #a9fadf, #cefad8, #e9f9dc, #fafaea, #fffefc);
+				 background-repeat: no-repeat;
+			}
+			
+			ul{ 
+				padding-left:1000px; 
+			}
+
+			#main_container{
+				/*display: block;*/
+				padding-top: 30px;		
+			}
+
+			.dataset{
+				justify-content: center;
+				width: 100%;
+				display: flex;
+				margin: 30px;
+			}
+
+			.product{
+				margin: 20px;
+				border-radius: 15px;
+				width: 20%;
+				padding: 10px;
+				box-shadow: 3px 3px 3px #999999;
+				background-color:white;
+				border-style: ridge;
+				background: linear-gradient(to bottom,  #fab0b0, #f8f8f8);
+			}
+			.product:hover{
+				background-color: rgb(205, 203, 203); 
+				border: 2px solid rgb(252, 247, 247);
+				border-radius: 5px;
+				color: black;
+			}
+			button {
+				padding: 10px 20px;
+				background-color: #3498db;
+				color: white;
+				border: none;
+				transition: all 0.3s ease;
+			}
+
+			button:active {
+				transform: scale(0.95);
+			}
+
+			img{
+				width: 200px;
+				height: 200px;
+				margin-left: 50px;
+				margin-bottom: 10px;
+				overflow: hidden;
+			}
+			
+			
+			#cart{
+				display: none;
+				padding-top: 150px;
+				color: crimson;
+				width: 60%;
+				margin-inline:auto;
+			}
+
+			#dict{
+				width: 100%;
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			.btn{
+				background-color: blue;
+				color: white;
+				margin-left:90px;
+			}
+
+			.cartmenu{
+				border: 2px black solid;
+				background-color: white;
+			}
+
+			hr{
+				margin-top: 40px;
+				width:100%;
+			}
+
+			#dict img{
+				width: 150px;
+				height: 150px;
+				padding-left: 0px;
+			}
+
+			center{
+				margin: 20px;
+			}
+
+			center a{
+				margin-top: 50px;
+				background-color: black;
+				border-radius: 5px;
+			}
+
+			span{
+				margin-left: 120px;
+				padding-top: 50px;
+			}
+
+		</style>
+
+		<script type="text/javascript" src="script.js"></script>
+	</head>
+
+	<body ng-app="ngApp" ng-controller="control">
+		<header>
+			<div class="nav">
+				<div class="left" align="left">Shop</div>
+				<div class="right" align="right">
+				<ul>
+					<button ng-click="changeLayout()" class="button"><li>Cart</li></button>
+					<button ng-click="reverseLayout()" class="button"><li>Product</li></button>
+				</ul>
+				</div>
+			</div>
+		</header>
+
+		<div id="main">
+		<div id="main_container">
+			<div class="dataset">
+				<div class="product" id="product1" id="product1">
+					<img src="1.png">
+					<p align="center">₹315</p>
+					
+					<button value="p1"  ng-click="fun('product1')" class="button btn">Add To Cart</button>
+				</div>
+				<div class="product" id="product2">
+					<img src="2.png">
+					<p align="center">₹250</p>
+					<button value="p2" ng-click="fun('product2')" class="button btn">Add To Cart</button>
+				</div>
+				<div class="product" id="product3">
+					<img src="3.png">
+					<p align="center">₹299</p>
+					<button value="p3" ng-click="fun('product3')" class="button btn">Add To Cart</button>
+				</div>	
+			</div>
+			<div class="dataset">
+				<div class="product" id="product4">
+					<img src="4.png">
+					<p align="center">₹620</p>
+					<button value="p4" ng-click="fun('product4')" class="button btn">Add To Cart</button>
+				</div>
+				<div class="product" id="product5">
+					<img src="5.png">
+					<p align="center">₹500</p>
+					<button value="p5" ng-click="fun('product5')" class="button btn">Add To Cart</button>
+				</div>
+				<div class="product" id="product6">
+					<img src="6.png">
+					<p align="center">₹700</p>
+					<button value="p6" ng-click="fun('product6')" class="button btn">Add To Cart</button>
+				</div>	
+			</div>
+			<div class="dataset">
+				<div class="product" id="product7">
+					<img src="7.png">
+					<p align="center">₹149</p>
+					<button value="p7" ng-click="fun('product7')" class="button btn">Add To Cart</button>
+				</div>
+				<div class="product" id="product8">
+					<img src="8.png">
+					<p align="center">₹215</p>
+					<button value="p8" ng-click="fun('product8')" class="button btn">Add To Cart</button>
+				</div>
+				<div class="product" id="product9">
+					<img src="9.png">
+					<p align="center">₹189</p>
+					<button value="p9" ng-click="fun('product9')" class="button btn">Add To Cart</button>
+				</div>	
+			</div>
+		</div>
+
+		<div id="cart">
+			<div class="cartmenu">
+				<span>Image</span>
+				<span>Price</span>
+				<span>Quantity</span>
+				<span>Total</span>
+				<hr align="center">
+	    			<div ng-repeat="(key,value) in call()"" id="dict">
+	    				<img src={{key|src}}>
+	    				<span>{{key|price}}</span>
+	    				<span>{{value}}</span>
+	    				<span>₹{{key+" "+value|total}}</span>
+	    			</div>
+	    		
+	    		<!-- <button value="p9" ng-click="bill()" class="button btn">Generate Bill</button> 
+	    		-->	
+			</div>
+
+			<center><a href="placeOrder.html">PlaceOrder</a></center>
+		</div>
+	</div>
+	</body>
+</html>
